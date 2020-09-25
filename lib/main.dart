@@ -20,15 +20,37 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildBoxRow() => Row(
-        children: [buildColumnOne()],
+        children: [buildColumnOne(), buildColumnTwo()],
       );
-
+  Widget buildColumnTwo() => Column(
+        children: [
+          Expanded(
+              child: Container(
+                  height: 100,
+                  width: 100,
+                  padding: const EdgeInsets.all(10.0),
+                  color: Colors.yellow,
+                  child: Text(
+                    'Container 3',
+                  ))),
+          Expanded(
+              child: Container(
+                  height: 100,
+                  width: 100,
+                  padding: const EdgeInsets.all(10.0),
+                  color: Colors.blue,
+                  child: Text(
+                    'Container 3',
+                  ))),
+        ],
+      );
+/////////////////////////////
   Widget buildColumnOne() => Column(
         children: [
           Container(
             height: 100,
             width: 100,
-            color: Colors.yellow,
+            color: Colors.yellow[300],
             padding: const EdgeInsets.all(10.0),
             child: Text('container 1'),
           ),
