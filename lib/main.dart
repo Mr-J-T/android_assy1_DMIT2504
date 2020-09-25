@@ -29,16 +29,22 @@ class MyApp extends StatelessWidget {
             height: 100,
             width: 100,
             color: Colors.yellow,
+            padding: const EdgeInsets.all(10.0),
             child: Text('container 1'),
           ),
           Container(
               child: Transform.rotate(
             angle: pi / 4,
             child: Container(
-              color: Colors.white,
-              height: 100,
-              width: 100,
-            ),
+                height: 100,
+                width: 100,
+                margin: const EdgeInsets.all(0),
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 3),
+                  color: Colors.white,
+                ),
+                child: Text('container 2')),
           )),
         ],
       );
