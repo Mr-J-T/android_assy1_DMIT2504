@@ -23,9 +23,11 @@ class MyApp extends StatelessWidget {
         children: [buildColumnOne(), buildColumnTwo()],
       );
   Widget buildColumnTwo() => Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Expanded(
               child: Container(
+                  margin: const EdgeInsets.all(20),
                   height: 100,
                   width: 100,
                   padding: const EdgeInsets.all(10.0),
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
                   ))),
           Expanded(
               child: Container(
+                  margin: EdgeInsets.all(20),
                   height: 100,
                   width: 100,
                   padding: const EdgeInsets.all(10.0),
@@ -48,6 +51,7 @@ class MyApp extends StatelessWidget {
   Widget buildColumnOne() => Column(
         children: [
           Container(
+            margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
             height: 100,
             width: 100,
             color: Colors.yellow[300],
@@ -55,19 +59,19 @@ class MyApp extends StatelessWidget {
             child: Text('container 1'),
           ),
           Container(
+              margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
               child: Transform.rotate(
-            angle: pi / 4,
-            child: Container(
-                height: 100,
-                width: 100,
-                margin: const EdgeInsets.all(0),
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 3),
-                  color: Colors.white,
-                ),
-                child: Text('container 2')),
-          )),
+                angle: pi / 4,
+                child: Container(
+                    height: 100,
+                    width: 100,
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 3),
+                      color: Colors.white,
+                    ),
+                    child: Text('container 2')),
+              )),
         ],
       );
 }
