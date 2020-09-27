@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -20,8 +21,41 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildBoxRow() => Row(
-        children: [buildColumnOne(), buildColumnTwo()],
+        children: [buildColumnOne(), buildColumnTwo(), buildColumnThree()],
       );
+  Widget buildColumnThree() => Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            height: 100,
+            width: 100,
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              'Container 5',
+              style: TextStyle(color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.white, width: 3.0),
+              color: Colors.black,
+            ),
+          ),
+          Container(
+            // this one needs to go to the bottom of the page possibly use the extend widget do more reading on expand/ extend
+            height: 100,
+            width: 100,
+            padding: EdgeInsets.all(10.0),
+            color: Colors.red,
+            child: Text(
+              'Con 6',
+              style: TextStyle(fontSize: 30),
+              textAlign: TextAlign.left,
+            ),
+          ),
+        ],
+      );
+  /////////////////
   Widget buildColumnTwo() => Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -43,7 +77,7 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   color: Colors.blue,
                   child: Text(
-                    'Container 3',
+                    'Container 4',
                   ))),
         ],
       );
