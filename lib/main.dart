@@ -21,12 +21,14 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildBoxRow() => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [buildColumnOne(), buildColumnTwo(), buildColumnThree()],
       );
   Widget buildColumnThree() => Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            margin: const EdgeInsets.fromLTRB(0, 200, 0, 200),
             height: 100,
             width: 100,
             padding: const EdgeInsets.all(10.0),
@@ -42,16 +44,18 @@ class MyApp extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          Container(
-            // this one needs to go to the bottom of the page possibly use the extend widget do more reading on expand/ extend
-            height: 100,
-            width: 100,
-            padding: EdgeInsets.all(10.0),
-            color: Colors.red,
-            alignment: Alignment(-1.0, -1.0),
-            child: Text(
-              'Con 6',
-              style: TextStyle(fontSize: 30),
+          Expanded(
+            child: Container(
+              // this one needs to go to the bottom of the page possibly use the extend widget do more reading on expand/ extend
+              height: 100,
+              width: 100,
+              padding: EdgeInsets.all(10.0),
+              color: Colors.red,
+              alignment: Alignment(-1.0, -1.0),
+              child: Text(
+                'Con 6',
+                style: TextStyle(fontSize: 30),
+              ),
             ),
           ),
         ],
@@ -62,7 +66,7 @@ class MyApp extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-                margin: const EdgeInsets.all(20),
+                margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
                 height: 100,
                 width: 100,
                 padding: const EdgeInsets.all(10.0),
@@ -74,13 +78,16 @@ class MyApp extends StatelessWidget {
           ),
           Expanded(
               child: Container(
-                  margin: EdgeInsets.all(20),
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                   height: 100,
                   width: 100,
                   padding: const EdgeInsets.all(10.0),
                   color: Colors.blue,
                   child: Text(
                     'Container 4',
+                    textAlign: TextAlign.end,
+
+                    /// cant seem to get this to align with in the column
                   ),
                   alignment: AlignmentDirectional.centerEnd)),
         ],
@@ -93,25 +100,29 @@ class MyApp extends StatelessWidget {
             width: 100,
             padding: const EdgeInsets.all(10.0),
             child: Text(
-              'Container 5',
+              'Container 1',
               textAlign: TextAlign.center,
             ),
             alignment: AlignmentDirectional.center,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black, width: 3.0),
-              color: Colors.yellow,
+              color: Colors.yellow[700],
             ),
           ),
           Container(
-              margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: Transform.rotate(
                 angle: pi / 4,
                 child: Container(
-                    height: 100,
-                    width: 100,
-                    padding: const EdgeInsets.all(10.0),
-                    color: Colors.white,
-                    child: Text('container 2')),
+                  height: 100,
+                  width: 100,
+                  padding: const EdgeInsets.all(10.0),
+                  color: Colors.white,
+                  child: Text(
+                    'container 2',
+                  ),
+                  alignment: Alignment.center,
+                ),
               )),
         ],
       );
