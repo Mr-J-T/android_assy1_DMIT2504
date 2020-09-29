@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
               style: TextStyle(color: Colors.white),
               textAlign: TextAlign.center,
             ),
+            alignment: Alignment(0.0, 0.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(color: Colors.white, width: 3.0),
@@ -47,10 +48,10 @@ class MyApp extends StatelessWidget {
             width: 100,
             padding: EdgeInsets.all(10.0),
             color: Colors.red,
+            alignment: Alignment(-1.0, -1.0),
             child: Text(
               'Con 6',
               style: TextStyle(fontSize: 30),
-              textAlign: TextAlign.left,
             ),
           ),
         ],
@@ -60,15 +61,17 @@ class MyApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Expanded(
-              child: Container(
-                  margin: const EdgeInsets.all(20),
-                  height: 100,
-                  width: 100,
-                  padding: const EdgeInsets.all(10.0),
-                  color: Colors.yellow,
-                  child: Text(
-                    'Container 3',
-                  ))),
+            child: Container(
+                margin: const EdgeInsets.all(20),
+                height: 100,
+                width: 100,
+                padding: const EdgeInsets.all(10.0),
+                color: Colors.yellow,
+                child: Text(
+                  'Container 3',
+                ),
+                alignment: AlignmentDirectional.bottomCenter),
+          ),
           Expanded(
               child: Container(
                   margin: EdgeInsets.all(20),
@@ -78,19 +81,26 @@ class MyApp extends StatelessWidget {
                   color: Colors.blue,
                   child: Text(
                     'Container 4',
-                  ))),
+                  ),
+                  alignment: AlignmentDirectional.centerEnd)),
         ],
       );
 /////////////////////////////
   Widget buildColumnOne() => Column(
         children: [
           Container(
-            margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
             height: 100,
             width: 100,
-            color: Colors.yellow[300],
             padding: const EdgeInsets.all(10.0),
-            child: Text('container 1'),
+            child: Text(
+              'Container 5',
+              textAlign: TextAlign.center,
+            ),
+            alignment: AlignmentDirectional.center,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 3.0),
+              color: Colors.yellow,
+            ),
           ),
           Container(
               margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -100,10 +110,7 @@ class MyApp extends StatelessWidget {
                     height: 100,
                     width: 100,
                     padding: const EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 3),
-                      color: Colors.white,
-                    ),
+                    color: Colors.white,
                     child: Text('container 2')),
               )),
         ],
