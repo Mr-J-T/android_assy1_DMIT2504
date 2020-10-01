@@ -80,7 +80,6 @@ class MyApp extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                   height: 100,
                   width: 100,
-                  //padding: const EdgeInsets.all(10.0),
                   color: Colors.blue,
                   child: Align(
                     alignment: Alignment.centerRight,
