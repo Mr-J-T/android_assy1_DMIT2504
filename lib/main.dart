@@ -46,21 +46,20 @@ class MyApp extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              // this one needs to go to the bottom of the page possibly use the extend widget do more reading on expand/ extend
-              height: 100,
-              width: 100,
-              padding: EdgeInsets.all(10.0),
-              color: Colors.red,
-              alignment: Alignment(-1.0, -1.0),
-              child: Text(
-                'Con 6',
-                style: TextStyle(fontSize: 30),
-              ),
-            ),
+                height: 100,
+                width: 100,
+                color: Colors.red,
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Con 6',
+                    style: TextStyle(fontSize: 30),
+                  ),
+                )),
           ),
         ],
       );
-  /////////////////
+
   Widget buildColumnTwo() => Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -81,18 +80,19 @@ class MyApp extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                   height: 100,
                   width: 100,
-                  padding: const EdgeInsets.all(10.0),
+                  //padding: const EdgeInsets.all(10.0),
                   color: Colors.blue,
-                  child: Text(
-                    'Container 4',
-                    textAlign: TextAlign.end,
-
-                    /// cant seem to get this to align with in the column
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'Container 4',
+                      textAlign: TextAlign.end,
+                    ),
                   ),
                   alignment: AlignmentDirectional.centerEnd)),
         ],
       );
-/////////////////////////////
+
   Widget buildColumnOne() => Column(
         children: [
           Container(
